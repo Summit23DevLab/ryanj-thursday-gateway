@@ -1,0 +1,38 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ryanj-thursday-poi-gateway-app-dev
+  annotations:
+    argocd/app-name: ryanj-thursday-poi-gateway-app-dev
+    backstage.io/kubernetes-id: ryanj-thursday-poi-gateway-app-dev
+    backstage.io/kubernetes-namespace: ryanj-thursday
+    backstage.io/kubernetes-label-selector: 'app.kubernetes.io/instance=ryanj-thursday-poi-gateway-app-dev'
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: Summit23DevLab/ryanj-thursday-gateway
+  tags:
+    - java
+    - quarkus
+    - maven
+    - workshop
+  links:
+    - url: https://devspaces.apps.summit23.0x74.p1.openshiftapps.com/#https://github.com/Summit23DevLab/ryanj-thursday-gateway?che-editor=che-incubator/che-code/latest&devfilePath=.devfile-vscode.yaml
+      title: CodeReady Workspaces (VS Code)
+      icon: web
+spec:
+  type: service
+  lifecycle: production
+  owner: "user:ryanj"
+  system: workshop-system-ryanj-thursday
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: workshop-system-ryanj-thursday
+  tags:
+    - backstage
+    - janus-idp
+    - openshift
+    - workshop
+    - rh-summit
+spec:
+  owner: "user:ryanj"
